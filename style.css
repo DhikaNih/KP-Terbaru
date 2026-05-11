@@ -1,0 +1,354 @@
+/* Base Layout */
+body {
+    background-color: #f4f7f6;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Halaman Login */
+.login-body {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    /* Diperlebar sedikit agar lebih seimbang */
+    background: #ffffff;
+    padding: 50px 40px;
+    /* Padding vertikal diperbesar agar lebih lega */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.login-container p {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-bottom: 35px;
+    /* Jarak dari sub-judul ke form diperbesar */
+}
+
+/* Mengelompokkan Form agar selalu rapi dan simetris */
+#loginForm {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 25px;
+    /* Jarak antar kolom diperbesar */
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #34495e;
+
+    /* PERBAIKAN: Memberikan jarak vertikal dari label ke input */
+    margin-bottom: 10px !important;
+
+    line-height: 1;
+}
+
+.form-group input {
+    width: 100%;
+
+    /* PERBAIKAN: Padding diperbesar agar tulisan tidak menempel */
+    padding: 14px 18px !important;
+
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fff;
+    /* Reset background kuning jika ada */
+    transition: all 0.3s ease;
+
+    /* PERBAIKAN: Mengunci ukuran agar simetris */
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.1);
+}
+
+/* Tombol Login Senada dengan Dashbor */
+.btn-login {
+    width: 100%;
+
+    /* PERBAIKAN: Padding diperbesar agar lurus dengan input */
+    padding: 15px !important;
+
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+
+    /* PERBAIKAN: Mengunci ukuran agar simetris */
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+.btn-login:hover {
+    background-color: #219150;
+}
+
+/* Penyesuaian Footer */
+.login-container .footer-text {
+    margin-top: 35px;
+    font-size: 11px;
+    color: #bdc3c7;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.user-nav {
+    font-size: 14px;
+}
+
+.link-logout {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 2 Column Grid */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+}
+
+/* Components */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    color: #34495e;
+    font-size: 18px;
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-accent {
+    border-top: 4px solid #27ae60;
+}
+
+.card-warning {
+    background: #fff9eb;
+    border: 1px solid #ffeaa7;
+}
+
+/* Table Styling */
+.table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table th {
+    position: sticky;
+    top: 0;
+    background: #34495e;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    z-index: 10;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Inputs & Buttons */
+#cariBuku {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 220px;
+}
+
+/* Pastikan container tombol di sidebar rapi */
+.btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    /* Mengunci lebar container */
+}
+
+/* Reset untuk link yang membungkus tombol agar tidak offside */
+.btn-link {
+    text-decoration: none;
+    display: block;
+    /* Mengubah link menjadi block agar mengikuti lebar parent */
+    width: 100%;
+}
+
+/* Base Button Style */
+.btn {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 14px;
+    display: block;
+}
+
+.separator {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+.btn-primary {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-secondary {
+    background: #34495e;
+    color: white;
+}
+
+.btn-info {
+    background: #2980b9;
+    color: white;
+}
+
+.btn-danger {
+    background: #c0392b;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Mapping Items */
+.mapping-item {
+    margin-bottom: 10px;
+}
+
+.mapping-item label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 3px;
+    color: #666;
+}
+
+.mapping-item select {
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 25px;
+    width: 70%;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+}
