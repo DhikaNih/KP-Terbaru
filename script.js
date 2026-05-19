@@ -100,20 +100,25 @@ async function renderDB() {
             wrap.innerHTML = '<div class="empty-msg"><span class="empty-icon">📚</span>Database masih kosong.</div>';
             return;
         }
-        let html = `<div class="t-wrap"><table id="tblDB"><thead><tr><th>#</th><th>Judul Buku</th><th>Penulis</th><th>Kode</th><th>Lembar</th><th>Vol</th><th>Ukuran</th><th>Harga (Rp)</th></tr></thead><tbody>`;
+        
+        let html = '<div class="t-wrap"><table id="tblDB">';
+        html += '<thead><tr><th>#</th><th>Judul Buku</th><th>Penulis</th><th>Kode</th><th>Lembar</th><th>Vol</th><th>Ukuran</th><th>Harga (Rp)</th></tr></thead>';
+        html += '<tbody>';
+        
         data.books.forEach((b, i) => {
-            html += `<tr>
-                <td class="mono">${i + 1}</td>
-                <td style="font-weight:600;" title="${escapeHtml(b.judul_buku)}">${escapeHtml(b.judul_buku)}</td>
-                <td>${escapeHtml(b.penulis)}</td>
-                <td><span class="badge b-teal">${escapeHtml(b.kode_buku)}</span></td>
-                <td class="mono">${b.jumlah_lembar}</td>
-                <td class="mono">${b.volume}</td>
-                <td><span class="badge b-blue">${escapeHtml(b.kode_ukuran)}</span></td>
-                <td class="mono">${parseInt(b.harga).toLocaleString('id-ID')}</td>
-            </tr>`;
+            html += '<tr>';
+            html += '<td class="mono">' + (i + 1) + '</td>';
+            html += '<td style="font-weight:600;" title="' + escapeHtml(b.judul_buku) + '">' + escapeHtml(b.judul_buku) + '</td>';
+            html += '<td>' + escapeHtml(b.penulis) + '</td>';
+            html += '<td><span class="badge b-teal">' + escapeHtml(b.kode_buku) + '</span></td>';
+            html += '<td class="mono">' + (b.jumlah_lembar || 0) + '</td>';
+            html += '<td class="mono">' + (b.volume || 0) + '</td>';
+            html += '<td><span class="badge b-blue">' + escapeHtml(b.kode_ukuran || '-') + '</span></td>';
+            html += '<td class="mono">' + parseInt(b.harga || 0).toLocaleString('id-ID') + '</td>';
+            html += '</tr>';
         });
-        html += `</tbody>}</div>`;
+        
+        html += '</tbody></table></div>';
         wrap.innerHTML = html;
     } catch (e) {
         toast(e.message, 'error');

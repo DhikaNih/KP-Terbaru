@@ -18,19 +18,35 @@ if (!isset($_SESSION['admin_logged']) || $_SESSION['admin_logged'] !== true) {
 <body>
 <!-- NAVBAR -->
 <nav class="navbar">
+  <!-- Kiri: Brand -->
   <div class="nav-brand">
     <div class="nav-logo">📊</div>
     <div>
-      <div class="nav-title">Konverter Katalog Buku Braille Yarfin</div>
-      <div class="nav-sub">Alat bantu digitalisasi data katalog buku Excel ke Database MySQL</div>
+      <div class="nav-title">Konverter Excel → MySQL</div>
+      <div class="nav-sub">Database Terintegrasi</div>
     </div>
   </div>
-  <div class="nav-tabs">
-    <button class="nav-tab active" onclick="showPanel('dashboard')">Dashboard</button>
-    <button class="nav-tab" onclick="showPanel('log')">Log Proses</button>
-    <button class="nav-tab" onclick="showPanel('rollback')">Rollback</button>
-    <button class="nav-tab" onclick="showPanel('database')">Database</button>
-    <button class="nav-tab" onclick="location.href='logout.php'">Logout</button>
+
+  <!-- Tengah: Tombol navigasi -->
+  <div class="nav-center">
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showPanel('dashboard')">Dashboard</button>
+      <button class="nav-tab" onclick="showPanel('log')">Log Proses</button>
+      <button class="nav-tab" onclick="showPanel('rollback')">Rollback</button>
+      <button class="nav-tab" onclick="showPanel('database')">Database</button>
+    </div>
+  </div>
+
+  <!-- Kanan: Info Admin + Logout Icon -->
+  <div class="nav-right">
+    <span class="admin-greeting">Hai, <?= htmlspecialchars($_SESSION['admin_user'] ?? 'Admin') ?>!</span>
+    <a href="logout.php" class="logout-icon" title="Logout">
+        <!-- SVG icon yang Anda berikan -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" />
+        </svg>
+    </a>
+</div>
   </div>
 </nav>
 
