@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             text-align: center;
         }
         .logo { font-size: 48px; margin-bottom: 16px; }
-        h2 { color: #0f766e; margin-bottom: 24px; }
+        h2,h4 { color: #0f766e; margin-bottom: 24px; }
         .input-group {
             margin-bottom: 20px;
             text-align: left;
@@ -109,7 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="login-card">
         <div class="logo">📚</div>
-        <h2>Konverter Excel → MySQL</h2>
+        <h4>Konverter Katalog Buku Braille Yarfin</h4>
+        <h2>Login Admin</h2>
         <?php if ($error): ?>
             <div class="error">⚠️ <?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
@@ -124,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <button type="submit">Masuk ke Dashboard</button>
         </form>
-        <footer>Topik 10 · Program Konversi Database</footer>
+        <footer>© 2026 YAYASAN RAUDLATUL MAKFUFIN</footer>
     </div>
 </body>
 </html>

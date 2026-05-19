@@ -211,7 +211,7 @@ async function renderRollback() {
                     <div class="rb-meta">${new Date(l.waktu_eksekusi).toLocaleString()} · ${l.jumlah_sukses} buku</div>
                     <div><code>${escapeHtml(l.batch_id)}</code></div>
                 </div>
-                <button class="btn btn-red btn-sm" onclick="jalanRollback('${l.batch_id}','${escapeHtml(l.nama_file)}',${l.jumlah_sukses})">↩️ Rollback</button>
+                <button class="btn btn-red btn-sm" onclick="jalanRollback('${l.batch_id}','${escapeHtml(l.nama_file)}',${l.jumlah_sukses})">Rollback</button>
             </div>
         `).join('');
     } catch (e) {
@@ -336,7 +336,7 @@ function renderPreview() {
     ).join('');
     pct.innerHTML = `
         <div class="preview-hdr">
-            <span>👁️ Menampilkan ${Math.min(15, rawRows.length)} dari ${rawRows.length} baris pertama</span>
+            <span>Menampilkan ${Math.min(15, rawRows.length)} dari ${rawRows.length} baris pertama</span>
             <span>${files.map(f => f.name).join(', ')}</span>
         </div>
         <div class="preview-scroll">
@@ -505,7 +505,7 @@ function jalanSimulasi() {
     const errSample = errors.slice(0, 8).map(e => `• ${e}`).join('\n');
     document.getElementById('simBox').style.display = 'block';
     document.getElementById('simBox').innerHTML = `
-        <div style="font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;margin-bottom:10px;">📊 Hasil Simulasi (database tidak diubah)</div>
+        <div style="font-size:10px;font-weight:700;color:var(--text2);text-transform:uppercase;margin-bottom:10px;">Hasil Simulasi (database tidak diubah)</div>
         <div class="sim-stats">
             <div class="sim-s"><div class="sn" style="color:var(--text)">${total}</div><div class="sl">Total Baris</div></div>
             <div class="sim-s"><div class="sn" style="color:var(--teal)">${valid}</div><div class="sl">Akan Disimpan</div></div>
@@ -551,7 +551,7 @@ async function simpanData() {
     } catch (e) {
         toast(e.message, 'error');
     }
-    btn.innerHTML = '🚀 Simpan ke Database';
+    btn.innerHTML = 'Simpan ke Database';
     btn.disabled = false;
 }
 
