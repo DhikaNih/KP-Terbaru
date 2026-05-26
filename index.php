@@ -20,7 +20,7 @@ if (!isset($_SESSION['admin_logged']) || $_SESSION['admin_logged'] !== true) {
 <nav class="navbar">
   <!-- Kiri: Brand -->
   <div class="nav-brand">
-    <div class="nav-logo">📊</div>
+    <img src="logo.png" alt="Logo Braille Yarfin" class="navbar-logo">
     <div>
       <div class="nav-title">Konverter Excel → MySQL</div>
       <div class="nav-sub">Database Terintegrasi</div>

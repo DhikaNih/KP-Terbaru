@@ -44,6 +44,13 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);font-size:13
   gap: 10px;
 }
 
+.navbar-logo {
+    height: 40px;  /* turunkan dari 45px jika masih terpotong */
+    width: auto;
+    max-height: 50px;
+    object-fit: contain;
+}
+
 .nav-center {
   flex: 1;
   display: flex;

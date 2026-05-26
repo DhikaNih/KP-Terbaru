@@ -53,6 +53,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             text-align: center;
         }
         .logo { font-size: 48px; margin-bottom: 16px; }
+        
+        .login-logo {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .logo-img {
+            max-width: 180px;
+            height: auto;
+            display: inline-block;
+        }
+
         h2,h4 { color: #0f766e; margin-bottom: 24px; }
         .input-group {
             margin-bottom: 20px;
@@ -108,7 +120,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="login-card">
-        <div class="logo">📚</div>
+        <div class="login-logo">
+        <img src="logo.png" alt="Logo Braille Yarfin" class="logo-img">
+        </div>
         <h4>Konverter Katalog Buku Braille Yarfin</h4>
         <h2>Login Admin</h2>
         <?php if ($error): ?>
