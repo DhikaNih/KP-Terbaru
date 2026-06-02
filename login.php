@@ -116,6 +116,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             font-size: 11px;
             color: #94a3b8;
         }
+        .password-group {
+            position: relative;
+        }
+        #togglePassword {
+            font-size: 18px;
+            opacity: 0.7;
+            transition: 0.2s;
+        }
+        #togglePassword:hover {
+            opacity: 1;
+        }
+        .password-wrapper {
+            position: relative;
+        }
+
+        .toggle-eye {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .toggle-eye:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -133,13 +163,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <label>Username</label>
                 <input type="text" name="username" required autofocus>
             </div>
-            <div class="input-group">
+            <div class="input-group password-group">
                 <label>Password</label>
-                <input type="password" name="password" required>
+                <div class="password-wrapper">
+                    <input type="password" name="password" id="password" required>
+                    <img src="eye-off-svgrepo-com.svg" alt="Tampilkan password" id="togglePassword" class="toggle-eye">
+                </div>
             </div>
             <button type="submit">Masuk ke Dashboard</button>
         </form>
         <footer>© 2026 YAYASAN RAUDLATUL MAKFUFIN</footer>
     </div>
+    <script>
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function() {
+                // Toggle tipe input
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Ganti ikon
+                if (type === 'text') {
+                    this.src = 'eye-off-svgrepo-com.svg';
+                    this.alt = 'Sembunyikan password';
+                } else {
+                    this.src = 'eye-show-svgrepo-com.svg';
+                    this.alt = 'Tampilkan password';
+                }
+            });
+    </script>
 </body>
 </html>
