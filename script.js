@@ -162,6 +162,11 @@ function exportCSV() {
     toast('Export CSV berhasil.', 'success');
 }
 
+function backupSQL() {
+    if (confirm('Backup seluruh database ke file SQL? Proses ini tidak akan menghapus data.')) {
+        window.location.href = 'backup.php';
+    }
+}
 // ==================== Log Proses (Tab Log) ====================
 async function renderLog() {
     try {

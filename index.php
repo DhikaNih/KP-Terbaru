@@ -11,6 +11,7 @@ if (!isset($_SESSION['admin_logged']) || $_SESSION['admin_logged'] !== true) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Konverter Excel ke MySQL</title>
+<link rel="icon" type="image/png" href="logo.png">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
@@ -207,6 +208,7 @@ if (!isset($_SESSION['admin_logged']) || $_SESSION['admin_logged'] !== true) {
           <button class="btn btn-teal btn-sm" onclick="renderDB()">Refresh</button>
           <button class="btn btn-red btn-sm" onclick="kosongkan()">Kosongkan</button>
           <button class="btn btn-blue btn-sm" onclick="exportCSV()">Export CSV</button>
+          <button class="btn btn-blue btn-sm" onclick="backupSQL()">Backup SQL</button>
         </div>
       </div>
       <div class="card-body">
